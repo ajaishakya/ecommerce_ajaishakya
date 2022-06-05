@@ -33,3 +33,6 @@ class ProductAdmin(admin.ModelAdmin):
         model = Product
 
 admin.site.register(Product, ProductAdmin)
+
+from .models import CartItem
+admin.site.register(CartItem)
