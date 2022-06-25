@@ -8,6 +8,9 @@ from .models import Product, CartItem
 from django.db.models import Q
 from .models import Product, Brand, Category
 
+def trial(request):
+    return render(request, 'trial.html')
+
 def index(request):
     if request.method == "GET":
         category_id = request.GET.get("category")
