@@ -33,12 +33,11 @@
             <td>
                 <h5>{{ item.quantity }}</h5>
             </td>
-            <td>
+            <td class=" pt-4">
                 <form method="post" action="/cart/remove/{{item.product.id}}">
                     {% csrf_token %}
 
-                    <button type="submit" class="btn btn-danger" type="submit"><i class="fa fa-times"
-                            aria-hidden="true"></i> Remove</button>
+                    <button type="submit" class="btn btn-danger btn-sm btn-outline-danger" type="submit"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>
                 </form>
             </td>
         </tr>
@@ -57,13 +56,12 @@
                     <div class="input-group">
                         <input type="text" class="form-control" name="token" placeholder="Token" />
                         <input type="hidden" name="amount" value="{{ total}}" />
-                        <button type="submit" class="btn btn-primary" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            Checkout Payment</button>
+                        <button type="submit" class="btn btn-primary btn-sm ml-4" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Checkout </button>
                     </div>
                 </form>
             </td>
             <td>
-                <button onclick="location.href='/';" class="btn btn -info">
+                <button onclick="location.href='/';" class="btn btn-info">
                     <i class="fa fa-search" aria-hidden="true"></i> Back to shop!</button>
             </td>
         </tr>
@@ -71,6 +69,6 @@
     </table>
     {% else %}
         <h2>No product added to cart.</h2>
-        <button onclick="location.href='/';" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Back to shop!</button>
+        <button onclick="location.href='/index';" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Back to shop!</button>
     {% endif %}
 {% endblock %}
